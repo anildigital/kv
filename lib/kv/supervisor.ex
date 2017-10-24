@@ -10,7 +10,8 @@ defmodule KV.Supervisor do
       {
         KV.Registry,
         name: KV.Registry
-      }
+      },
+      KV.BucketSupervisor
     ]
 
     Supervisor.init(children, strategy: :one_for_one)
