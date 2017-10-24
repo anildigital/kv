@@ -6,7 +6,7 @@ defmodule KV.MixProject do
       app: :kv,
       version: "0.1.0",
       elixir: "~> 1.6-dev",
-      start_permanent: Mix.env == :prod,
+      start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
   end
@@ -14,7 +14,8 @@ defmodule KV.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {KV, []}
     ]
   end
 
